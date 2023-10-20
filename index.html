@@ -3,48 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注文・取引システム</title>
+    <title>注文フォーム</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .container { border: 1px solid #ccc; padding: 20px; }
-        .section { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 10px; }
-        input[type="text"], select { width: 100%; padding: 10px; margin-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 10px; }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="section">
-            <label for="order-number">注文番号:</label>
-            <input type="text" id="order-number">
+    <form id="orderForm">
+        <label>
+            注文番号:
+            <input type="text" name="orderNumber">
+        </label>
 
-            <!-- 他の入力フィールドもこのように追加できます -->
-        </div>
+        <label>
+            受注日:
+            <input type="date" name="orderDate">
+        </label>
 
-        <div class="section">
-            <table>
-                <thead>
-                    <tr>
-                        <th>商品コード</th>
-                        <th>商品名</th>
-                        <!-- 他のカラムもこのように追加できます -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>サンプル商品</td>
-                        <!-- 他のセルもこのように追加できます -->
-                    </tr>
-                    <!-- 他の行もこのように追加できます -->
-                </tbody>
-            </table>
-        </div>
+        <label>
+            取次:
+            <input type="number" name="brokerNumber">
+        </label>
 
-        <!-- 他のセクションもこのように追加できます -->
-    </div>
+        <label>
+            書店:
+            <input type="text" name="bookstore">
+        </label>
+
+        <label>
+            購入先:
+            <select name="purchaseLocation">
+                <!-- オプションは適宜追加してください -->
+                <option value="option1">オプション1</option>
+                <option value="option2">オプション2</option>
+            </select>
+        </label>
+
+        <label>
+            搬入口:
+            <select name="entryGate">
+                <!-- オプションは適宜追加してください -->
+                <option value="gate1">ゲート1</option>
+                <option value="gate2">ゲート2</option>
+            </select>
+        </label>
+
+        <label>
+            セット数:
+            <input type="number" name="setNumber">
+        </label>
+
+        <label>
+            本体価格:
+            <input type="number" name="mainPrice">
+        </label>
+
+        <label>
+            出荷日指定:
+            <input type="date" name="shipmentDate">
+        </label>
+
+        <button type="button" onclick="clearFields()">明細クリア</button>
+        <button type="button" onclick="closeWindow()">閉じる</button>
+    </form>
+
+    <script>
+        function clearFields() {
+            document.getElementById('orderForm').reset();
+        }
+
+        function closeWindow() {
+            window.close();
+        }
+    </script>
 </body>
 </html>
