@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注文・取引システム</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { border: 1px solid #ccc; padding: 20px; }
+        .section { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 10px; }
+        input[type="text"], select { width: 100%; padding: 10px; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <label for="order-number">注文番号:</label>
+            <input type="text" id="order-number">
+
+            <!-- 他の入力フィールドもこのように追加できます -->
+        </div>
+
+        <div class="section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>商品コード</th>
+                        <th>商品名</th>
+                        <!-- 他のカラムもこのように追加できます -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>サンプル商品</td>
+                        <!-- 他のセルもこのように追加できます -->
+                    </tr>
+                    <!-- 他の行もこのように追加できます -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 他のセクションもこのように追加できます -->
+    </div>
+</body>
+</html>
